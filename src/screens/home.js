@@ -1,10 +1,11 @@
 import React from 'react';
-import body from'./home.css'
 
 
 const Home = () => (
 <div>
-    <h2>Welcome</h2>
+    <h2>Cause for Care</h2>
+
+    <p>Some info here</p>
 </div>
 );
 
