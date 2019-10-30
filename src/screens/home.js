@@ -1,4 +1,5 @@
 import React from 'react';
+import body from'./home.css'
 
 
 const Home = () => (
