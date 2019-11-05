@@ -1,10 +1,10 @@
 import React from 'react';
-import './Home/home.css'
+import '../index.css';
 
 
 const Home = () => (
 <div>
-    <h2>Cause for Care</h2>
+    <h2 class="first">Cause for Care</h2>
 
     <p>Some info here</p>
 </div>

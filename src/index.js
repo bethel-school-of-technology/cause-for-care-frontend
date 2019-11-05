@@ -1,10 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import "./index.css";
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+
 import Home from "./screens/home";
 import Login from './screens/login';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import User from './screens/userProfile';
 import Organ from './screens/organProfile';
+import Signup from './screens/signup';
+import Jobapp from './screens/jobApp';
 
 const App = () => (
   <Router>
@@ -22,6 +26,9 @@ const App = () => (
         <li>
           <Link to="/organization">Organization</Link>
         </li>
+        <li>
+          <Link to='/signup'>Signup</Link>
+        </li>
       </ul>
 
       <hr />
@@ -30,6 +37,8 @@ const App = () => (
       <Route path="/login" component={Login} />
       <Route path="/profile" component={User} />
       <Route path="/organization" component={Organ} />
+      <Route path="/signup" component={Signup} />
+      <Route path="jobapp" component={Jobapp} />
     </div>
   </Router>
 );
