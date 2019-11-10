@@ -1,33 +1,72 @@
-import React from 'react';
-import "../App.css"
-import User from './userProfile';
-import {Button} from 'react-bootstrap'
-import {BrowserRouter as Router, Route} from 'react-router-dom';
 
+import React from "react";
+import { Formik } from "formik";
+import * as Yup from "yup";
+import "./styles/login.css"
 
-class Login extends React.Component {
-    render(){
-        return (
-          <div>
-   <form>
-       <div className="container">
-           <label for="uname">Username:</label>
-           <input type="text" placeholder="Enter Username" name="uname" ></input>
-           <br></br>
-           <label for="pass">Password:</label>
-           <input type="text" placeholder="Enter Password" name="pass" ></input>
-            <br></br>
-            <div>
-            <Button href="/profile">Login</Button>
-            </div>
-       </div>
-   </form>
-       <Router>
-       <Route path="/profile" component={User} />
-      </Router>
-      </div>
-        );
-    };
-}
+const Login = () => (
+  <Formik
+    initialValues={{ email: "", password: "" }}
+    onSubmit={(values, { setSubmitting }) => {
+      setTimeout(() => {
+        console.log("Logging in", values);
+        setSubmitting(false);
+      }, 500);
+    }}
+
+    validationSchema={Yup.object().shape({
+      email: Yup.string()
+        .email()
+        .required("Required"),
+      password: Yup.string()
+        .required("No password provided.")
+        .min(8, "Password is too short - should be 8 chars minimum.")
+        .matches(/(?=.*[0-9])/, "Password must contain a number.")
+    })}
+  >
+    {props => {
+      const {
+        values,
+        touched,
+        errors,
+        isSubmitting,
+        handleChange,
+        handleBlur,
+        handleSubmit
+      } = props;
+      return (
+        <form onSubmit={handleSubmit}>
+          <label htmlFor="email">Email</label>
+          <input
+            name="email"
+            type="text"
+            value={values.email}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            className={errors.email && touched.email && "error"}
+          />
+          {errors.email && touched.email && (
+            <div className="input-feedback">{errors.email}</div>
+          )}
+          <label htmlFor="email">Password</label>
+          <input
+            name="password"
+            type="password"
+            value={values.password}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            className={errors.password && touched.password && "error"}
+          />
+          {errors.password && touched.password && (
+            <div className="input-feedback">{errors.password}</div>
+          )}
+          <button type="submit" disabled={isSubmitting}>
+            Login
+          </button>
+        </form>
+      );
+    }}
+  </Formik>
+);
 
 export default Login;
