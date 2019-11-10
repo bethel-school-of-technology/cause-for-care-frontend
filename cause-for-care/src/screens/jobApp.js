@@ -1,5 +1,6 @@
 import React from 'react';
 import "./styles/jobApp.css"
+import { Form, Col, Button} from 'react-bootstrap'
 
 class Jobapp extends React.Component {
     constructor(props) {
@@ -23,37 +24,60 @@ class Jobapp extends React.Component {
   render() {
     return (
     <div>
-      <form onSubmit={this.handleSubmit} className="apply">
-   
-        <br />
-        <label for="org">Organazation Applying for: 
-        <input type="text" name="org" required></input>
-        </label>
-        <br />
-        <label>
-          Name: 
-          <input type="text" value={this.state.value} onChange={this.handleChange} />
-        </label>
-        <br />
-        <label for="name">Last Name: 
-        <input type="text" name="lname" required></input>
-        </label>
-        <br />
-        <label for="birth">Birthdate
-        <input type="text" name="birth" required></input>
-        </label>
-        <br />
-        <label for="location">Address
-        <input type="text" name="location" required></input>
-        </label>
-        <br />
-        <label>
-            Upload Resume:
-            <input type="file" ref={this.fileInput} />
-        </label>
-        <br />
-        <button type="submit">Apply</button>
-        </form>
+        <h2>Welcome!</h2>
+        <h4>Working for an organization can be both benefitual and rewarding.
+            
+        </h4>
+        <Form>
+  <Form.Row>
+    <Form.Group as={Col} controlId="formGridEmail">
+      <Form.Label>Email</Form.Label>
+      <Form.Control type="email" placeholder="Enter email" />
+    </Form.Group>
+
+    <Form.Group as={Col} controlId="formGridPassword">
+      <Form.Label>Password</Form.Label>
+      <Form.Control type="password" placeholder="Password" />
+    </Form.Group>
+  </Form.Row>
+
+  <Form.Group controlId="formGridAddress1">
+    <Form.Label>Address</Form.Label>
+    <Form.Control placeholder="1234 Main St" />
+  </Form.Group>
+
+  <Form.Group controlId="formGridAddress2">
+    <Form.Label>Address 2</Form.Label>
+    <Form.Control placeholder="Apartment, studio, or floor" />
+  </Form.Group>
+
+  <Form.Row>
+    <Form.Group as={Col} controlId="formGridCity">
+      <Form.Label>City</Form.Label>
+      <Form.Control />
+    </Form.Group>
+
+    <Form.Group as={Col} controlId="formGridState">
+      <Form.Label>State</Form.Label>
+      <Form.Control as="select">
+        <option>Choose...</option>
+        <option>...</option>
+      </Form.Control>
+    </Form.Group>
+
+    <Form.Group as={Col} controlId="formGridZip">
+      <Form.Label>Zip</Form.Label>
+      <Form.Control />
+    </Form.Group>
+    <Form.Group as={Col} controlId="">
+      <Form.Label>Upload Resume:</Form.Label>
+      <input type="file" ref={this.fileInput} />
+    </Form.Group>
+  </Form.Row>
+  <Button variant="primary" type="submit">
+    Submit
+  </Button>
+</Form>
     </div>
         )
     };
