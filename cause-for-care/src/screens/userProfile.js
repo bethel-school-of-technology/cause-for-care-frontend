@@ -27,7 +27,6 @@ class User extends React.Component {
             <Container>
                 <Row>
                 <Col>
-                <img src="avatar.png" alt="Avatar" className="avatar" />
                 <h2>Welcome User</h2>
                 <p>Apply now to meet a need in your area.</p>
                 <Button href="/jobApp">Apply</Button>
