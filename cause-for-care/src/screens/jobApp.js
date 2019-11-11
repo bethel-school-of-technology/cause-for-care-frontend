@@ -29,16 +29,15 @@ class Jobapp extends React.Component {
             
         </h4>
         <Form>
-  <Form.Row>
-    <Form.Group as={Col} controlId="formGridEmail">
-      <Form.Label>Email</Form.Label>
-      <Form.Control type="email" placeholder="Enter email" />
-    </Form.Group>
-
-    <Form.Group as={Col} controlId="formGridPassword">
-      <Form.Label>Password</Form.Label>
-      <Form.Control type="password" placeholder="Password" />
-    </Form.Group>
+        <Form.Row>
+          <Form.Group as={Col} md="4" controlId="validationCustom01">
+            <Form.Label>First name</Form.Label>
+            <Form.Control type="text" required/>
+          </Form.Group>
+          <Form.Group as={Col} md="4" controlId="validationCustom02">
+            <Form.Label>Last name</Form.Label>
+            <Form.Control type="text" required/>
+          </Form.Group>
   </Form.Row>
 
   <Form.Group controlId="formGridAddress1">
