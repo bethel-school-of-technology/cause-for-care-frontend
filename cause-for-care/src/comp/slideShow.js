@@ -6,7 +6,7 @@ class Showslide extends React.Component {
         return (
     <Carousel>
         <CarouselItem>
-            <img className="d-block w-100px" src= 'https://making-the-web.com/sites/default/files/clipart/175744/images-people-helping-others-175744-8364596.jpg' alt="img1" />
+            <img  src= 'https://making-the-web.com/sites/default/files/clipart/175744/images-people-helping-others-175744-8364596.jpg' alt="img1" />
         </CarouselItem>
         <CarouselItem>
             <img src='https://making-the-web.com/sites/default/files/clipart/135711/helping-people-135711-8204814.jpg' alt="img2"/>
