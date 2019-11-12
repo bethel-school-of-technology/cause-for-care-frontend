@@ -1,5 +1,5 @@
 import React from 'react';
-import "./styles/jobApp.css"
+import "../screens/styles/user.css"
 import { Form, Col, Button} from 'react-bootstrap'
 
 class Jobapp extends React.Component {
