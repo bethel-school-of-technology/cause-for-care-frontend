@@ -4,6 +4,9 @@ import {Button, Container, Col, Row} from 'react-bootstrap'
 import { Slide } from 'react-slideshow-image';
 import "./styles/user.css"
 import Jobapp from './jobApp';
+import SideNav from '../comp/userSide';
+import userSide from '../comp/userSide';
+import UserSide from '../comp/userSide';
 
 
  const slideImages = [
@@ -24,6 +27,9 @@ class User extends React.Component {
     render(){
         return(
             <div>
+                <div>
+                    <UserSide />
+                </div>
             <Container>
                 <Row>
                 <Col>
