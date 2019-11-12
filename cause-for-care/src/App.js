@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Navigation from './comp/nav';
+import Navigation from './comp/Navigation/nav';
 
 function App () {
   return (

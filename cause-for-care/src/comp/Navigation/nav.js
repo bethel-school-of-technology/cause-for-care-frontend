@@ -1,13 +1,13 @@
 import React from 'react';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
-import {Navbar, Nav, Form, FormControl, Button} from 'react-bootstrap';
+import {Navbar, Nav, Form, Button} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Home from "../screens/home";
-import User from '../screens/userProfile';
-import Organ from '../screens/organization';
-import Signup from '../screens/signup';
-import Jobapp from '../screens/jobApp';
-import Login from '../screens/login';
+import Home from "../../screens/home";
+import User from '../../screens/userProfile';
+import Organ from '../../screens/organization';
+import Signup from '../../screens/signup';
+import Jobapp from '../jobApp';
+import Login from '../../screens/login';
 
 
 class Navigation extends React.Component {
@@ -26,8 +26,6 @@ class Navigation extends React.Component {
       <Button href="/login">Login</Button>
       <Button variant="success" href="/signup">Signup</Button>
     <Form inline>
-      <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-      <Button variant="outline-primary">Search</Button>
     </Form>
     </Nav>
   </Navbar.Collapse>
