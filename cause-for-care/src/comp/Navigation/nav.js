@@ -4,7 +4,7 @@ import {Navbar, Nav, Form, Button} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Home from "../../screens/home";
 import User from '../../screens/userProfile';
-import Organ from '../../screens/organization';
+import Organ from '../../screens/organUView';
 import Signup from '../../screens/signup';
 import Jobapp from '../jobApp';
 import Login from '../../screens/login';
