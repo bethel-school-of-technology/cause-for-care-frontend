@@ -30,26 +30,33 @@ class Jobapp extends React.Component {
       </p>
       <Form>
         <Form.Row>
-          <Form.Group as={Col} md="4" controlId="name">
+          
+          <Col>
+          <Form.Group controlId="name">
             <Form.Label>First name</Form.Label>
             <Form.Control type="text" required/>
-          </Form.Group>
-        </Form.Row>
-        <Form.Row>
-          <Form.Group as={Col} md="4" controlId="name2">
+          </Form.Group>          
+          </Col>
+
+          <Col>
+          <Form.Group controlId="name2">
             <Form.Label>Last name</Form.Label>
             <Form.Control type="text" required/>
           </Form.Group>
+          </Col>
         </Form.Row>
+        
         <Form.Row>
-          <Form.Group as={Col} controlId="phoneNumber"></Form.Group>
+        <Col>
+          <Form.Group controlId="phoneNumber"></Form.Group>
           <Form.Label>Phone Number</Form.Label>
           <Form.Control type="text" required />
-        </Form.Row>
-        <Form.Row>
-          <Form.Group as={Col} controlId="email"></Form.Group>
+          </Col>
+          <Col>
+          <Form.Group controlId="email"></Form.Group>
           <Form.Label>Email</Form.Label>
           <Form.Control type="email" required />
+          </Col>
         </Form.Row>
         <Form.Row>
           <Form.Group as={Col} controlId="">

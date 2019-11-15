@@ -9,7 +9,6 @@ const Login = () => (
     initialValues={{ email: "", password: "" }}
     onSubmit={(values, { setSubmitting }) => {
       setTimeout(() => {
-        console.log("Logging in", values);
         setSubmitting(false);
       }, 500);
     }}
@@ -26,19 +25,12 @@ const Login = () => (
   >
     {props => {
       const {
-        values,
-        touched,
-        errors,
-        isSubmitting,
-        handleChange,
-        handleBlur,
-        handleSubmit
+        values, touched, errors, isSubmitting, handleChange, handleBlur, handleSubmit
       } = props;
       return (
         <form onSubmit={handleSubmit}>
           <label htmlFor="email">Email</label>
-          <input
-            name="email"
+          <input 
             type="text"
             value={values.email}
             onChange={handleChange}
@@ -50,7 +42,6 @@ const Login = () => (
           )}
           <label htmlFor="email">Password</label>
           <input
-            name="password"
             type="password"
             value={values.password}
             onChange={handleChange}
@@ -60,7 +51,7 @@ const Login = () => (
           {errors.password && touched.password && (
             <div className="input-feedback">{errors.password}</div>
           )}
-          <button type="submit" disabled={isSubmitting}>
+          <button type="submit" disabled={isSubmitting} href="/profile">
             Login
           </button>
         </form>

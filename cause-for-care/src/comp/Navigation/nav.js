@@ -24,7 +24,7 @@ class Navigation extends React.Component {
     </Nav>
     <Nav>
       <Button href="/login">Login</Button>
-      <Button variant="success" href="/signup">Signup</Button>
+      <Button variant="sucess" href="/signup">Signup</Button>
     <Form inline>
     </Form>
     </Nav>
