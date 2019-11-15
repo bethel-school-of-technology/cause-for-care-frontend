@@ -1,38 +1,39 @@
 import React from 'react';
-import "../App.css"
-
+import '../App.css';
 
 class Jobboard extends React.Component {
-
-    state = {
-        loading: true,
-        messages: null
+  state = {
+    loading: true,
+    messages: []
+  };
+  async componentDidMount() {
+    const url = 'https://us-central1-cause-for-care.cloudfunctions.net/api/jobs';
+    const response = await fetch(url);
+    const data = await response.json();
+    this.setState({messages: data, loading: false});
+  }
+  render() {
+    if (this.state.loading) {
+      return <div>getting listings from FBDB...</div>;
     }
-    async componentDidMount() {
-        const url = 'http://localhost:5001/cause-for-care/us-central1/api/messages';
-        const response = await fetch(url, {
-            mode: 'cors'
-        });
-        const data = await response.json();
-        this.setState({ messages: data[0], loading: false })
-        // console.log(data[0]);
+    if (!this.state.messages.length) {
+      return <div> couldn't get listings</div>;
     }
-    render() {
-        return (
-            <div>
-                <h1>this should show jobs....</h1>
-                <div>
-                    {this.state.loading || !this.state.messages ? (
-                        <div>getting stuff from server...</div>
-                    ) : (
-                            <ul>
-                                <div>{this.state.messages.body}</div>
-                            </ul>
-                        )}
-                </div>
+    return (
+      <div>
+        <h1>this should show jobs....</h1>
+        <div>
+          {this.state.messages.map(message => (
+            <div key={message.messageId}>
+              <div>{message.body}</div>
+              <div>{message.userHandle}</div>
+              <div>{message.orgHandle}</div>
             </div>
-        )
-    }
+          ))}
+        </div>
+      </div>
+    );
+  }
 }
 
 export default Jobboard;
