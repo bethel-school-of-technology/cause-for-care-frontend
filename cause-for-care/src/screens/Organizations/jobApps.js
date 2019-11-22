@@ -1,5 +1,4 @@
 import React from "react";
-import Jobapp from "../../comp/jobApp";
 
 class JobappView extends React.Component {
     render(){

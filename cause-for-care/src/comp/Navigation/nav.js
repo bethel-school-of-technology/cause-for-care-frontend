@@ -7,7 +7,7 @@ import User from '../../screens/userProfile';
 import UVOrgan from '../../screens/organUView';
 import Signup from '../../screens/signup';
 import Jobapp from '../jobApp';
-import LoginPage from '../enter/loginPage';
+import LoginPage from '../../screens/loginPage';
 import Organ from '../../screens/Organizations/organization';
 
 class Navigation extends React.Component {

@@ -3,6 +3,7 @@ import "../../App.css"
 import { Tab, Row, Nav, Col} from 'react-bootstrap';
 import Blogposts from '../../comp/blog/blogPosts';
 import JobappView from './jobApps';
+import Showslide from '../../comp/slideShow'
 
 class Organ extends React.Component {
     render(){
@@ -28,6 +29,7 @@ class Organ extends React.Component {
                             <Tab.Pane eventKey="first">
                                 <h3>Welcome</h3>
                                 <p>Organization description</p>
+                                <Showslide />
                             </Tab.Pane>
                             <Tab.Pane eventKey="second">
                                 <Blogposts />

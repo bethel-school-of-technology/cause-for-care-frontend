@@ -1,7 +1,6 @@
 import React from 'react';
 import "./styles/home.css";
 import {Col, Row, Container} from 'react-bootstrap';
-import ShowSlide from '../comp/slideShow';
 
 class Home extends React.Component {
     render(){
@@ -18,7 +17,6 @@ class Home extends React.Component {
     </Col>
     </Row>
     </Container>
-    <ShowSlide />
 </div>
 )
         }

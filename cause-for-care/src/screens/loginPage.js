@@ -1,7 +1,7 @@
 import React from "react";
 import {Tab, Tabs} from 'react-bootstrap';
-import Login from "./userLogin";
-import OrgLogin from "./orgLogin";
+import Login from "../comp/enter/userLogin";
+import OrgLogin from "../comp/enter/orgLogin";
 
 class LoginPage extends React.Component {
     render() {
