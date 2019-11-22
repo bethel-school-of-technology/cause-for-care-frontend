@@ -7,7 +7,7 @@ class Jobboard extends React.Component {
     messages: []
   };
   async componentDidMount() {
-    const url = 'https://us-central1-cause-for-care.cloudfunctions.net/api/jobs';
+    const url = 'https://us-central1-cause-for-care.cloudfunctions.net/api/orgjobs';
     const response = await fetch(url);
     const data = await response.json();
     this.setState({messages: data, loading: false});
