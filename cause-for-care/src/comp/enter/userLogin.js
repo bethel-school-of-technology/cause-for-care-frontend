@@ -14,7 +14,7 @@ class Login extends React.Component {
                 <input type='password' name="password" required />
               </div>
               <div>
-                <Button href="/profile">Submit</Button>
+                <Button variant="danger" href="/profile">Submit</Button>
               </div>
           </Form>
         )

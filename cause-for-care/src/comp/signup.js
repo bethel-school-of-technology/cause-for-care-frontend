@@ -7,7 +7,7 @@ import {Button, Form, Col} from 'react-bootstrap'
         render(){
   
     return (
-      <Form>
+      <Form method="POST">
           <Form.Row>
           <Form.Group as={Col} controlId="email">
             <Form.Label>Email</Form.Label>

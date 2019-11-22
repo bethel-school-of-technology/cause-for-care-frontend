@@ -14,7 +14,7 @@ class OrgLogin extends React.Component {
                 <input type='password' name="password" required />
               </div>
               <div>
-                <Button href="/organization-profile">Submit</Button>
+                <Button variant="danger" href="/organization-profile">Submit</Button>
               </div>
           </Form>
         )

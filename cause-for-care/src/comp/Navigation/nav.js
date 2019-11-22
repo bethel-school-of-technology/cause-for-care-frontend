@@ -23,8 +23,8 @@ class Navigation extends React.Component {
       <Nav.Link href="/organization">Organization</Nav.Link>
     </Nav>
     <Nav>
-      <Button href="/login">Login</Button>
-      <Button variant="sucess" href="/signup">Signup</Button>
+      <Button variant="danger" href="/login">Login</Button>
+      <Button variant="warning" href="/signup">Signup</Button>
     <Form inline>
     </Form>
     </Nav>
