@@ -1,8 +1,8 @@
 import React from 'react';
-import "../App.css"
+import "../../App.css"
 import { Tab, Row, Nav, Col} from 'react-bootstrap';
 import Blogposts from '../../comp/blog/blogPosts';
-import Jobapp from '../../comp/jobApp';
+import JobappView from './jobApps';
 
 class Organ extends React.Component {
     render(){
@@ -33,7 +33,7 @@ class Organ extends React.Component {
                                 <Blogposts />
                             </Tab.Pane>
                             <Tab.Pane eventKey="third">
-                                <Jobapp />
+                                <JobappView />
                             </Tab.Pane>
                         </Tab.Content>
                         </Col>

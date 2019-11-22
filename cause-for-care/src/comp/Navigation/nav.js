@@ -4,11 +4,11 @@ import {Navbar, Nav, Form, Button} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Home from "../../screens/home";
 import User from '../../screens/userProfile';
-import Organ from '../../screens/organUView';
+import UVOrgan from '../../screens/organUView';
 import Signup from '../../screens/signup';
 import Jobapp from '../jobApp';
-import Login from '../../screens/login';
-
+import LoginPage from '../enter/loginPage';
+import Organ from '../../screens/Organizations/organization';
 
 class Navigation extends React.Component {
     render(){
@@ -32,11 +32,12 @@ class Navigation extends React.Component {
 </Navbar>
 <hr />
 <Route exact path="/" component={Home} />
-      <Route path="/login" component={Login} />
+      <Route path="/login" component={LoginPage} />
       <Route path="/profile" component={User} />
-      <Route path="/organization" component={Organ} />
+      <Route path="/organization" component={UVOrgan} />
       <Route path="/signup" component={Signup} />
       <Route path="/jobapp" component={Jobapp} />
+      <Route path="/organization-profile" component={Organ}/>
 </Router>
 );
     }

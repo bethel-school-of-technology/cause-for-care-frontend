@@ -4,7 +4,7 @@ import { Tab, Row, Nav, Col} from 'react-bootstrap';
 import Blogposts from '../comp/blog/blogPosts';
 import Jobapp from '../comp/jobApp';
 
-class Organ extends React.Component {
+class UVOrgan extends React.Component {
     render(){
         return(
             <div>
@@ -44,4 +44,4 @@ class Organ extends React.Component {
     }
 }
 
-export default Organ;
+export default UVOrgan;
