@@ -43,7 +43,10 @@ import {Button, Form, Col} from 'react-bootstrap'
             <Form.Control type="text" required />
           </Form.Group>
         </Form.Row>
+
         <Button type="submit" variant="dark" href="/login">Sign Up</Button>
+        
+        <a href='/login'>Already have an account?</a>
       </Form>
     );
     }
