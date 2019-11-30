@@ -1,7 +1,7 @@
 import React from 'react';
 import "../App.css"
 import { Tab, Row, Nav, Col} from 'react-bootstrap';
-import Blogposts from '../comp/blog/blogPosts';
+import Blogpost from '../comp/blog/blogPost';
 import Jobapp from '../comp/jobApp';
 
 class UVOrgan extends React.Component {
@@ -30,7 +30,7 @@ class UVOrgan extends React.Component {
                                 <p>Organization description</p>
                             </Tab.Pane>
                             <Tab.Pane eventKey="second">
-                                <Blogposts />
+                                <Blogpost />
                             </Tab.Pane>
                             <Tab.Pane eventKey="third">
                                 <Jobapp />

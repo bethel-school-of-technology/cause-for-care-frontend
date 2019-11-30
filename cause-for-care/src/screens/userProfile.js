@@ -1,6 +1,7 @@
 import React from 'react';
 import { Col, Row, Nav, Tab} from 'react-bootstrap';
 import "./styles/user.css"
+import Blogposts from '../comp/blog/blogPosts';
 
 class User extends React.Component {
     render(){
@@ -26,7 +27,7 @@ class User extends React.Component {
         <Tab.Pane eventKey="second">
          
           <h3>Here's What you've missed this week!</h3>
-          <p>Blog feed from posts from organizations</p>
+         <Blogposts />
         </Tab.Pane>
       </Tab.Content>
     </Col>

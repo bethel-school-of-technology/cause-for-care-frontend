@@ -1,7 +1,7 @@
 import React from 'react';
 import "../../App.css"
 import { Tab, Row, Nav, Col} from 'react-bootstrap';
-import Blogposts from '../../comp/blog/blogPosts';
+import Blogpost from '../../comp/blog/blogPost';
 import JobappView from './jobApps';
 import Showslide from '../../comp/slideShow'
 
@@ -32,7 +32,7 @@ class Organ extends React.Component {
                                 <Showslide />
                             </Tab.Pane>
                             <Tab.Pane eventKey="second">
-                                <Blogposts />
+                                <Blogpost />
                             </Tab.Pane>
                             <Tab.Pane eventKey="third">
                                 <JobappView />

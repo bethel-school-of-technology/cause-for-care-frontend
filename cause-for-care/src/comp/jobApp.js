@@ -1,72 +1,40 @@
 import React from 'react';
-import "../screens/styles/user.css"
-import { Form, Col, Button} from 'react-bootstrap'
+import "../screens/styles/jobBoard.css";
 
-class Jobapp extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {value: ""};
-
-        this.handleChange = this.handleChange.bind(this);
-        this.handleSubmit = this.handleChange.bind(this);
-        this.fileInput = React.createRef();
-    }
-
-        handleChange(event) {
-            this.setState({value: event.target.value});
-        }
-    
-       handleSubmit(event) {
-            alert("Congratulations! You've applied");
-            event.preventDefault();
-        }
-
+class Jobboard extends React.Component {
+  state = {
+    loading: true,
+    messages: []
+  };
+  async componentDidMount() {
+    const url = 'https://us-central1-cause-for-care.cloudfunctions.net/api/orgjobs';
+    const response = await fetch(url);
+    const data = await response.json();
+    this.setState({messages: data, loading: false});
+  }
   render() {
+    if (this.state.loading) {
+      return <div>Fetching Available Positions...</div>;
+    }
+    if (!this.state.messages.length) {
+      return <div> Couldn't get listings</div>;
+    }
     return (
-    <div>
-      <h2>Welcome!</h2>
-      <p>
-        Have you ever wanted to make a difference in your community? Apply now to help change the world around you.
-      </p>
-      <Form>
-        <Form.Row>
-          
-          <Col>
-          <Form.Group controlId="name">
-            <Form.Label>First name</Form.Label>
-            <Form.Control type="text" required/>
-          </Form.Group>          
-          </Col>
-
-          <Col>
-          <Form.Group controlId="name2">
-            <Form.Label>Last name</Form.Label>
-            <Form.Control type="text" required/>
-          </Form.Group>
-          </Col>
-        </Form.Row>
-        
-        <Form.Row>
-        <Col>
-          <Form.Group controlId="phoneNumber"></Form.Group>
-          <Form.Label>Phone Number</Form.Label>
-          <Form.Control type="text" required />
-          </Col>
-          <Col>
-          <Form.Group controlId="email"></Form.Group>
-          <Form.Label>Email</Form.Label>
-          <Form.Control type="email" required />
-          </Col>
-        </Form.Row>
-        <Form.Row>
-          <Form.Group as={Col} controlId="">
-            <Form.Label>Upload Resume:</Form.Label>
-            <input type="file" ref={this.fileInput} />
-          </Form.Group>
-        </Form.Row>
-        <Button variant="primary" type="submit">Submit</Button>
-      </Form>
-    </div> 
-  )};
+      <div>
+        <h1>Available Positions</h1>
+        <div>
+          {this.state.messages.map(message => (
+            <div key={message.messageId}>
+              <div className="messTitle">{message.title}</div>
+              <div className="messBody">{message.body}</div>
+              <div className="messUser">{message.userHandle}</div>
+              <div className="messOrg">-{message.orgHandle}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    );
+  }
 }
-export default Jobapp;
+
+export default Jobboard;
