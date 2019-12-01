@@ -1,11 +1,13 @@
 import React from 'react';
-import {Button, Form, Col} from 'react-bootstrap'
+import { withFirebase } from '../Firebase';
+import {Button, Form} from 'react-bootstrap'
+import {compose } from 'recompose';
 
-const Orgsign = () => {
+const Orgsign = () => (
   <div>
-    <OrgSignUp />
+    <OrgsignUp />
   </div>
-}
+);
 const INITIAL_STATE = {
   orgHandle: "",
   email: "",
@@ -14,19 +16,19 @@ const INITIAL_STATE = {
   Location: "",
   error: null,
 };
- 
-    class OrgSignUp extends React.Component {
+class OrgSignUpBase extends React.Component {
         constructor (props) {
           super(props);
           this.state = { ...INITIAL_STATE };
         }
         onSubmit = event => {
-          const {orgHandle, email, pasword, cause, location }=this.state
-
+          const {orgHandle, email, password, cause, location }=this.state
+          
           this.props.firebase
-          .doCreateUserWithEmailAndPassword(email, password)
+          .doCreateUserWithEmailAndPassword(orgHandle, email, password, cause, location)
           .then(authUser => {
             this.setState({ ...INITIAL_STATE});
+            this.props.history.push('/profile')
           })
           .catch(error => {
             this.setState({error})
@@ -48,14 +50,16 @@ const INITIAL_STATE = {
 
         return (
           <Form onSubmit={this.onSubmit}>
+            
+            <label htmlFor="orgHandle">Organization Name</label>
             <input
             name="orgHandle"
             value={orgHandle}
             onChange={this.onChange}
             type="text"
-            required
-            >Organization Name:</input>
-
+            required />
+            
+            <label htmlFor="email">Email</label>
             <input
             name="email"
             value={email}
@@ -64,29 +68,29 @@ const INITIAL_STATE = {
             required
             ></input>
 
+            <label htmlFor="password">Password</label>
             <input
             name="password"
             value={password}
             onChange={this.onChange}
             type="password"
-            required
-            >Password</input>
+            required />
 
+            <label htmlFor="cause">Cause</label>
             <input
             name="cause"
             value={cause}
             onChange={this.onChange}
             type="text"
-            required
-            ></input>
+            required />
 
+            <label htmlFor="location">Location</label>
             <input
             name="location"
             value={location}
             onChange={this.onChange}
             type="text"
-            required
-            ></input>
+            required />
             <Button type="submit">Sign Up</Button>
 
             {error && <p>{error.message}</p>}
@@ -134,6 +138,8 @@ const INITIAL_STATE = {
     );
     }
   }
+  const OrgsignUp = compose(
+  withFirebase)(OrgSignUpBase);
   
   export default Orgsign;
-  export {OrgSignUp};
+  export { OrgsignUp };
