@@ -1,8 +1,9 @@
 import React from 'react';
 import "../App.css"
 import { Tab, Row, Nav, Col} from 'react-bootstrap';
-import Blogpost from '../comp/blog/blogPost';
+import Blogposts from '../comp/blog/blogPosts';
 import Jobapp from '../comp/jobApp';
+import Showslide from '../comp/slideShow';
 
 class UVOrgan extends React.Component {
     render(){
@@ -28,9 +29,10 @@ class UVOrgan extends React.Component {
                             <Tab.Pane eventKey="first">
                                 <h3>Welcome</h3>
                                 <p>Organization description</p>
+                                <Showslide />
                             </Tab.Pane>
                             <Tab.Pane eventKey="second">
-                                <Blogpost />
+                                <Blogposts />
                             </Tab.Pane>
                             <Tab.Pane eventKey="third">
                                 <Jobapp />

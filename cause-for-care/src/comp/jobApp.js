@@ -25,10 +25,11 @@ class Jobboard extends React.Component {
         <div>
           {this.state.messages.map(message => (
             <div key={message.messageId}>
-              <div className="messTitle">{message.title}</div>
+              <div className='body'>
+              <h5 className="messTitle">{message.title}</h5>
               <div className="messBody">{message.body}</div>
-              <div className="messUser">{message.userHandle}</div>
-              <div className="messOrg">-{message.orgHandle}</div>
+              <div className="messHandle">-{message.orgHandle}</div>
+              </div>
             </div>
           ))}
         </div>

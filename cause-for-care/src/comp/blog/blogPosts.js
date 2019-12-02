@@ -1,4 +1,5 @@
 import React from 'react';
+import "../../screens/styles/blogposts.css"
 
 class Blogposts extends React.Component {
     state = {
@@ -17,9 +18,11 @@ class Blogposts extends React.Component {
             <div>
                 {this.state.orgUpdates.map(orgUpdates => (
             <div key={orgUpdates.messageId}>
-                <div>{orgUpdates.title}</div>
-                <div>{orgUpdates.body}</div>
-                <div>-{orgUpdates.orgHandle}</div>
+                <div className="body">
+                    <div>{orgUpdates.title}</div>
+                    <div>{orgUpdates.body}</div>
+                    <div className="orgHandle">-{orgUpdates.orgHandle}</div>
+                </div>
             </div>
             ))}
             </div>

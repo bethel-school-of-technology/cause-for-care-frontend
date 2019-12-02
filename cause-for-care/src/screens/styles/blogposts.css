@@ -1,11 +1,8 @@
-.messTitle {
-    font-weight: bold;
-}
 .body {
     padding: 15px;
     border-left: 6px solid indianred;
-    background-color: rgb(192, 192, 192);
+    background-color: rgb(218, 218, 218);
 }
-.messHandle {
+.orgHandle {
     font-weight: lighter;
 }

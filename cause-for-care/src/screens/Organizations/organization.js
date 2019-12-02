@@ -2,8 +2,10 @@ import React from 'react';
 import "../../App.css"
 import { Tab, Row, Nav, Col} from 'react-bootstrap';
 import Blogpost from '../../comp/blog/blogPost';
-import JobappView from './jobApps';
 import Showslide from '../../comp/slideShow'
+import Blogposts from '../../comp/blog/blogPosts';
+import Jobboard from '../../comp/jobApp';
+import Orgwelcome from './orgWelcome';
 
 class Organ extends React.Component {
     render(){
@@ -20,7 +22,7 @@ class Organ extends React.Component {
                                     <Nav.Link eventKey="second">Post an Update</Nav.Link>
                                 </Nav.Item>
                                 <Nav.Item>
-                                    <Nav.Link eventKey="third">View Applications</Nav.Link>
+                                    <Nav.Link eventKey="third">View Job Postings</Nav.Link>
                                 </Nav.Item>
                             </Nav>
                         </Col>
@@ -30,12 +32,14 @@ class Organ extends React.Component {
                                 <h3>Welcome</h3>
                                 <p>Organization description</p>
                                 <Showslide />
+                                <Orgwelcome />
                             </Tab.Pane>
                             <Tab.Pane eventKey="second">
                                 <Blogpost />
+                                <Blogposts />
                             </Tab.Pane>
                             <Tab.Pane eventKey="third">
-                                <JobappView />
+                                <Jobboard />
                             </Tab.Pane>
                         </Tab.Content>
                         </Col>

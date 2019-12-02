@@ -1,5 +1,5 @@
 import React from 'react';
-import {Button, Form, Col} from 'react-bootstrap'
+import {Button, Form} from 'react-bootstrap'
 import { withFirebase } from '../Firebase';
 import { compose } from 'recompose'
 
