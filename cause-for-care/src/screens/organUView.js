@@ -4,6 +4,7 @@ import { Tab, Row, Nav, Col} from 'react-bootstrap';
 import Blogposts from '../comp/blog/blogPosts';
 import Jobapp from '../comp/jobApp';
 import Showslide from '../comp/slideShow';
+import Orgwelcome from './Organizations/orgWelcome';
 
 class UVOrgan extends React.Component {
     render(){

@@ -23,6 +23,7 @@ class UserSide extends React.Component {
             <h3>Welcome User</h3>
         </Tab.Pane>
         <Tab.Pane eventKey="second">
+          <orgList />
         </Tab.Pane>
       </Tab.Content>
     </Col>
