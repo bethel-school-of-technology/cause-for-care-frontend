@@ -2,3 +2,6 @@
     height: 150px;
     width: auto;
 }
+.carousel-item {
+    justify-content: center;
+}

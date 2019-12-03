@@ -2,7 +2,6 @@ import React from 'react';
 import "../../App.css"
 import { Tab, Row, Nav, Col} from 'react-bootstrap';
 import Blogpost from '../../comp/blog/blogPost';
-import Showslide from '../../comp/slideShow'
 import Blogposts from '../../comp/blog/blogPosts';
 import Jobboard from '../../comp/jobApp';
 import Orgwelcome from './orgWelcome';
@@ -29,13 +28,12 @@ class Organ extends React.Component {
                         <Col sm={8}>
                         <Tab.Content>
                             <Tab.Pane eventKey="first">
-                                <h3>Welcome</h3>
-                                <p>Organization description</p>
-                                <Showslide />
                                 <Orgwelcome />
                             </Tab.Pane>
                             <Tab.Pane eventKey="second">
                                 <Blogpost />
+                                <br/>
+                                <h4>Already Posted</h4>
                                 <Blogposts />
                             </Tab.Pane>
                             <Tab.Pane eventKey="third">

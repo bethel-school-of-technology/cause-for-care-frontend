@@ -3,7 +3,6 @@ import "../App.css"
 import { Tab, Row, Nav, Col} from 'react-bootstrap';
 import Blogposts from '../comp/blog/blogPosts';
 import Jobapp from '../comp/jobApp';
-import Showslide from '../comp/slideShow';
 import Orgwelcome from './Organizations/orgWelcome';
 
 class UVOrgan extends React.Component {
@@ -28,9 +27,7 @@ class UVOrgan extends React.Component {
                         <Col sm={8}>
                         <Tab.Content>
                             <Tab.Pane eventKey="first">
-                                <h3>Welcome</h3>
-                                <p>Organization description</p>
-                                <Showslide />
+                                <Orgwelcome />
                             </Tab.Pane>
                             <Tab.Pane eventKey="second">
                                 <Blogposts />

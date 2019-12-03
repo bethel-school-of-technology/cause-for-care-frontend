@@ -9,7 +9,7 @@ import Signup from '../../screens/signup';
 import Jobapp from '../jobApp';
 import LoginPage from '../../screens/loginPage';
 import Organ from '../../screens/Organizations/organization';
-
+import OrgList from '../../screens/Organizations/orgList'
 class Navigation extends React.Component {
     render(){
   return (
@@ -20,7 +20,7 @@ class Navigation extends React.Component {
   <Navbar.Collapse id="responsive-navbar-nav">
     <Nav className="mr-auto">
       <Nav.Link href="/profile">Profile</Nav.Link>
-      <Nav.Link href="/organization">Organization</Nav.Link>
+      <Nav.Link href="/orgList">Organization</Nav.Link>
     </Nav>
     <Nav>
       <Button variant="danger" href="/login">Login</Button>
@@ -34,6 +34,7 @@ class Navigation extends React.Component {
 <Route exact path="/" component={Home} />
       <Route path="/login" component={LoginPage} />
       <Route path="/profile" component={User} />
+      <Route path="/orgList" component={OrgList} />
       <Route path="/organization" component={UVOrgan} />
       <Route path="/signup" component={Signup} />
       <Route path="/jobapp" component={Jobapp} />

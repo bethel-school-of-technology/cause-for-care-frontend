@@ -8,8 +8,9 @@ class Home extends React.Component {
 <div>
     <Container>
     <Row>
-    <Col>Our Mission Statement</Col>
-    <Col>We are dedicated to helping Organizations, big or small, connect with the world around them. We are also dedicated to
+    <Col sm="8" md="8" lg="8">
+        <h3>Our Mission Statement</h3>
+        We are dedicated to helping Organizations, big or small, connect with the world around them. We are also dedicated to
         helping people like you discover a need in your community and world
     </Col>
     <Col>

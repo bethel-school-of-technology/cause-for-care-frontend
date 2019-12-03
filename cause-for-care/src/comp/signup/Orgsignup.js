@@ -1,9 +1,8 @@
 import React from 'react';
-import { withFirebase } from '../Firebase';
-import {Button, Form} from 'react-bootstrap'
-import {compose } from 'recompose';
-
-const Orgsign = () => (
+import {Button, Col, Form, FormControl} from 'react-bootstrap'
+//import {compose } from 'recompose';
+//import { withFirebase } from '../Firebase';
+/*const Orgsign = () => (
   <div>
     <OrgsignUp />
   </div>
@@ -15,9 +14,76 @@ const INITIAL_STATE = {
   cause: "",
   Location: "",
   error: null,
-};
-class OrgSignUpBase extends React.Component {
-        constructor (props) {
+};*/
+class Orgsign extends React.Component {
+  render(){
+    return (
+  <Form method="POST">
+          <Form.Row>
+          <Form.Group as={Col} controlId="email">
+            <Form.Label>Organization Name</Form.Label>
+            <Form.Control type="text" />
+          </Form.Group>
+          </Form.Row>
+          <Form.Row>
+          <Form.Group as={Col}  controlId="pass" >
+            <Form.Label>Password</Form.Label>
+            <Form.Control type="password" />
+          </Form.Group>
+        </Form.Row>
+        <Form.Row>
+          <Form.Group as={Col} controlId="address"></Form.Group>
+          <Form.Label>Street Address</Form.Label>
+          <Form.Control type="text" />
+        </Form.Row>
+      
+        <Form.Row>
+          <Form.Group as={Col} md="4" xs="4" controlId="location">
+            <Form.Label>City</Form.Label>
+            <Form.Control type="text" required />
+          </Form.Group>
+          
+          <Form.Group as={Col} md="4" xs="4"controlId="validationCustom04">
+            <Form.Label>State</Form.Label>
+            <Form.Control type="text" required />
+          </Form.Group>
+
+          <Form.Group as={Col} md="4" xs="4" controlId="validationCustom05">
+            <Form.Label>Zip</Form.Label>
+            <Form.Control type="text" required />
+          </Form.Group>
+        </Form.Row>
+        <Form.Row>
+          <Form.Group as={Col} controlId="cause">
+          <Form.Label>Cause:</Form.Label>
+          <Form.Control as="select">
+            <option>Animals</option>
+            <option>Arts, Culture, Humanities</option>
+            <option>Community Development</option>
+            <option>Education</option>
+            <option>Environment</option>
+            <option>Health</option>
+            <option>International</option>
+            <option>Religion</option>
+          </Form.Control>
+          </Form.Group>
+        </Form.Row>
+        <Form.Row>
+          <Form.Group as={Col} conntrolId="descrip">
+            <Form.Label>Organization Description</Form.Label>
+            <FormControl as="textarea" aria-label="Textarea" />
+          </Form.Group>
+        </Form.Row>
+
+        <Button type="submit" variant="dark" href="/login">Sign Up</Button>
+        
+        <a href='/login'>Already have an account?</a>
+      </Form>
+    );
+    }
+  }
+  //Trying to connect to Firebase for Authentication
+  /* constructor (props) {
           super(props);
           this.state = { ...INITIAL_STATE };
         }
@@ -95,51 +161,9 @@ class OrgSignUpBase extends React.Component {
 
             {error && <p>{error.message}</p>}
           </Form>
-      /*<Form method="POST">
-          <Form.Row>
-          <Form.Group as={Col} controlId="email">
-            <Form.Label>Organization Name</Form.Label>
-            <Form.Control type="text" />
-          </Form.Group>
-          </Form.Row>
-          <Form.Row>
-          <Form.Group as={Col}  controlId="pass" >
-            <Form.Label>Password</Form.Label>
-            <Form.Control type="password" />
-          </Form.Group>
-        </Form.Row>
-        <Form.Row>
-          <Form.Group as={Col} controlId="address"></Form.Group>
-          <Form.Label>Street Address</Form.Label>
-          <Form.Control type="text" />
-        </Form.Row>
       
-        <Form.Row>
-          <Form.Group as={Col} md="4" xs="4" controlId="location">
-            <Form.Label>City</Form.Label>
-            <Form.Control type="text" required />
-          </Form.Group>
-          
-          <Form.Group as={Col} md="4" xs="4"controlId="validationCustom04">
-            <Form.Label>State</Form.Label>
-            <Form.Control type="text" required />
-          </Form.Group>
-
-          <Form.Group as={Col} md="4" xs="4" controlId="validationCustom05">
-            <Form.Label>Zip</Form.Label>
-            <Form.Control type="text" required />
-          </Form.Group>
-        </Form.Row>
-
-        <Button type="submit" variant="dark" href="/login">Sign Up</Button>
-        
-        <a href='/login'>Already have an account?</a>
-      </Form>*/
-    );
-    }
-  }
   const OrgsignUp = compose(
   withFirebase)(OrgSignUpBase);
-  
+  */
   export default Orgsign;
-  export { OrgsignUp };
+  //export { OrgsignUp };
